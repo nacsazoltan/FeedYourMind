@@ -1,0 +1,15 @@
+# Build outputs
+bin/
+obj/
+
+# VS tooling
+.vs/
+
+# Local temp build artifacts
+_build_temp/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
