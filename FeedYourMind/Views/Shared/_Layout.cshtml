@@ -1,0 +1,143 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@Localizer["SiteName"]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-container">
+        <header class="site-header">
+            <div class="container">
+                <div class="header-top">
+                    <a href="@Url.Action("Index", "Landing")" class="logo-link">
+                        <div class="logo">
+                            <img src="~/images/etesdazeszed_logo.png" alt="Etés da zeszed Logo" />
+                        </div>
+                    </a>
+                    <nav id="primary-nav" class="main-menu" aria-label="Primary">
+                        <a href="@Url.Action("Index", "Landing")" class="menu-item">@Localizer["Menu_Home"]</a>
+                        <a href="@Url.Action("Index", "Home")" class="menu-item">@Localizer["Menu_Healthy"]</a>
+                        <a href="@Url.Action("Index", "Sustainability")" class="menu-item">@Localizer["Menu_Sustainability"]</a>
+                    </nav>
+                    <div class="header-actions">
+                        <nav class="language-nav">
+                            @await Html.PartialAsync("_SetLanguagePartial")
+                        </nav>
+                        <button type="button"
+                                class="nav-toggle"
+                                aria-controls="primary-nav"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="nav-toggle-bar" aria-hidden="true"></span>
+                            <span class="nav-toggle-bar" aria-hidden="true"></span>
+                            <span class="nav-toggle-bar" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" role="main" class="site-main">
+            @{ var currentController = ViewContext.RouteData.Values["controller"]?.ToString(); }
+            @if (currentController != "Page" && currentController != "Landing")
+            {
+            <section class="filter-section" aria-label="Filters">
+                <div class="container">
+                    <nav class="filter-nav" aria-label="Filters">
+                        @if (currentController == "Sustainability")
+                        {
+                            <a href="@Url.Action("Index", "Sustainability", new { category = "ecosystem" })"
+                               class="@(ViewData["CurrentTopic"] as string == "ecosystem" ? "active" : "")">
+                                <img src="~/images/icon_ecosystem.png" alt="@Localizer["Sust_Ecosystem"]" />
+                                <span>@Localizer["Sust_Ecosystem"]</span>
+                            </a>
+                            <a href="@Url.Action("Index", "Sustainability", new { category = "environment" })" 
+                               class="@(ViewData["CurrentTopic"] as string == "environment" ? "active" : "")">
+                                <img src="~/images/icon_environment.png" alt="@Localizer["Sust_Environment"]" />
+                                <span>@Localizer["Sust_Environment"]</span>
+                            </a>
+                            <a href="@Url.Action("Index", "Sustainability", new { category = "food-consumption" })"
+                               class="@(ViewData["CurrentTopic"] as string == "food-consumption" ? "active" : "")">
+                                <img src="~/images/icon_food_consumption.png" alt="@Localizer["Sust_Consumption"]" />
+                                <span>@Localizer["Sust_Consumption"]</span>
+                            </a>
+                        }
+                        else
+                        {
+                         <a href="@Url.Action("Index", "Home", new { topic = "basic" })" 
+                            class="@(ViewData["CurrentTopic"] as string == "basic" ? "active" : "")">
+                            @if (currentController != "Landing")
+                            {
+                                <img src="~/images/icon_basic.png" alt="@Localizer["Topic_Basic"]" />
+                                <span>@Localizer["Topic_Basic"]</span>
+                            }
+                         </a>
+                         <a href="@Url.Action("Index", "Home", new { topic = "food" })"
+                            class="@(ViewData["CurrentTopic"] as string == "food" ? "active" : "")">
+                            @if (currentController != "Landing")
+                            {
+                                <img src="~/images/icon_food.png" alt="@Localizer["Topic_Food"]" />
+                                <span>@Localizer["Topic_Food"]</span>
+                            }
+                         </a>
+                         <a href="@Url.Action("Index", "Home", new { topic = "health" })"
+                            class="@(ViewData["CurrentTopic"] as string == "health" ? "active" : "")">
+                            @if (currentController != "Landing")
+                            {
+                                <img src="~/images/icon_health.png" alt="@Localizer["Topic_Health"]" />
+                                <span>@Localizer["Topic_Health"]</span>
+                            }
+                         </a>
+                         <a href="@Url.Action("Index", "Home", new { topic = "diet" })"
+                            class="@(ViewData["CurrentTopic"] as string == "diet" ? "active" : "")">
+                            @if (currentController != "Landing")
+                            {
+                                <img src="~/images/icon_diet.png" alt="@Localizer["Topic_Diet"]" />
+                                <span>@Localizer["Topic_Diet"]</span>
+                            }
+                         </a>
+                        }
+                    </nav>
+                </div>
+            </section>
+            }
+            @RenderBody()
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <nav aria-label="Footer">
+                    <a href="@Url.Action("Index", "Page", new { page = "privacy" })">@Localizer["Footer_Privacy"]</a>
+                    <a href="@Url.Action("Index", "Page", new { page = "termsofuse" })">@Localizer["Footer_TermsOfUse"]</a>
+                    <a href="@Url.Action("Index", "Page", new { page = "about" })">@Localizer["Footer_About"]</a>
+                </nav>
+                <p>&copy; 2025 - Okos Doboz</p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <button type="button" class="modal-fullscreen-toggle" hidden aria-label="Expand to fullscreen">
+                <img class="modal-fullscreen-icon" src="~/images/maximize.png" alt="" aria-hidden="true" />
+            </button>
+            <div id="modal-container">
+                </div>
+        </div>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

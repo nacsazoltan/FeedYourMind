@@ -1,0 +1,96 @@
+@model OkosDobozWeb.Models.HomeViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["CurrentTopic"] = Model.CurrentTopic; // Pass topic to _Layout.cshtml
+}
+
+<section class="app-section" aria-label="@Localizer["Topic_Basic"]">
+    <div class="container">
+        <div class="content-wrapper-with-sidebar content-section">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="text-section">
+                    @foreach (var item in Model.FilteredTexts)
+                    {
+                        <article>
+                            <h2>@item.Title</h2>
+                            <p>@item.Description</p>
+                        </article>
+                    }
+                </section>
+
+                <!-- Right Sidebar Navigation -->
+                <aside class="sidebar-navigation" aria-label="@Localizer["NavVideos"] & @Localizer["NavExercises"]">
+                    <button class="nav-button" onclick="scrollToSection('videos-section')">
+                        <img src="~/images/videos_button.png" alt="@Localizer["NavVideos"]" />
+                        <span>@Localizer["NavVideos"]</span>
+                    </button>
+                    <button class="nav-button" onclick="scrollToSection('exercises-section')">
+                        <img src="~/images/exercises_button.png" alt="@Localizer["NavExercises"]" />
+                        <span>@Localizer["NavExercises"]</span>
+                    </button>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="app-section" id="videos-section">
+    <div class="container">
+        <div class="content-section">
+            <h2>@Localizer["WatchThese"]</h2>
+            <div class="thumbnail-grid">
+                @foreach (var item in Model.FilteredVideos)
+                {
+                    <div class="thumbnail-item">
+                        <a href="#" class="modal-trigger" data-type="video" data-id="@item.VideoId">
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/@item.VideoId/hqdefault.jpg" alt="@item.Title" />
+                            <p>@item.Title</p>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="app-section" id="exercises-section">
+    <div class="container">
+        <div class="content-section">
+            <div class="section-title-row">
+                <h2>@Localizer["SolveThese"]</h2>
+                <div class="exercise-grade-legend" aria-label="@Localizer["GradeLegendLabel"]">
+                    <div class="exercise-grade-legend-item">
+                        <span class="exercise-grade-legend-swatch is-low" aria-hidden="true"></span>
+                        <span>@Localizer["GradeLegend_Lower"]</span>
+                    </div>
+                    <div class="exercise-grade-legend-item">
+                        <span class="exercise-grade-legend-swatch is-high" aria-hidden="true"></span>
+                        <span>@Localizer["GradeLegend_Upper"]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail-grid">
+                @foreach (var item in Model.FilteredExercises)
+                {
+                    <div class="thumbnail-item">
+                        <a href="#" class="modal-trigger" data-type="exercise" data-id="@item.ExerciseId">
+                            <div class="thumbnail-media">
+                                @if (item.Grade is int grade)
+                                {
+                                    var badgeClass = grade >= 5 ? "exercise-grade-badge is-high" : "exercise-grade-badge is-low";
+                                    <span class="@badgeClass" aria-label="Grade @grade">@grade</span>
+                                }
+                                <img src="@item.ThumbnailUrl" alt="@item.Name" />
+                            </div>
+                            <p>@item.Name</p>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

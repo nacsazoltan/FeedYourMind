@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LandingTitle" xml:space="preserve">
+    <value>Vítejte na stránkách Nakrmte svůj mozek!</value>
+  </data>
+  <data name="Category_Healthy" xml:space="preserve">
+    <value>Zdravá výživa</value>
+  </data>
+  <data name="Category_Sustainability" xml:space="preserve">
+    <value>Udržitelnost</value>
+  </data>
+  <data name="HealthyTitle" xml:space="preserve">
+    <value>Nestlé pro zdravější děti</value>
+  </data>
+  <data name="HealthyContent" xml:space="preserve">
+    <value>Pro společnost Nestlé Česká republika je zdravá výživa dětí zásadní pro zajištění jejich optimálního vývoje. Teorie a praxe se však často liší, protože rodiče a poživatelé se často potýkají s problémy, jak povzbudit děti k konzumaci více zeleniny a ovoce a zajistit, aby konzumovaná jídla byla výživná.
+Prostřednictvím programu Nestlé pro zdravější děti chceme rodičům a poskytovatelům péče pomoci zajistit, aby byly jejich děti zdravější. Cílem programu je dosáhnout 200 tisíc dětí do roku 2030 s poselstvím o zdravé, vyvážené výživě.</value>
+  </data>
+  <data name="SustainabilityTitle" xml:space="preserve">
+    <value>Udržitelnost</value>
+  </data>
+  <data name="SustainabilityContent" xml:space="preserve">
+    <value>Udržitelnost je zajímavé slovo. Zde je nějaký text o udržitelnosti.</value>
+  </data>
+  <data name="Rect_Healthy_Title" xml:space="preserve">
+    <value>Zdravá výživa</value>
+  </data>
+  <data name="Rect_Sustain_Title" xml:space="preserve">
+    <value>Udržitelnost</value>
+  </data>
+  <data name="Sust_Ecosystem" xml:space="preserve">
+    <value>Ecosystém</value>
+  </data>
+  <data name="Sust_Environment" xml:space="preserve">
+    <value>Ochrana</value>
+  </data>
+  <data name="Sust_Consumption" xml:space="preserve">
+    <value>Konzumace</value>
+  </data>
+  <data name="NavVideos" xml:space="preserve">
+    <value>Videa</value>
+  </data>
+  <data name="NavExercises" xml:space="preserve">
+    <value>Cvičení</value>
+  </data>
+  <data name="Topic_Basic" xml:space="preserve">
+    <value>Základy</value>
+  </data>
+  <data name="Topic_Food" xml:space="preserve">
+    <value>Jídlo</value>
+  </data>
+  <data name="Topic_Health" xml:space="preserve">
+    <value>Zdraví</value>
+  </data>
+  <data name="Topic_Diet" xml:space="preserve">
+    <value>Návyky</value>
+  </data>
+  <data name="SlideshowTitle" xml:space="preserve">
+    <value>Galerie</value>
+  </data>
+</root>

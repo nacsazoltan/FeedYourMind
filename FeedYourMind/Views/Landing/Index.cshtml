@@ -1,0 +1,127 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "Home";
+    
+    // Get YouTube ID based on current language
+    string youtubeId = System.Globalization.CultureInfo.CurrentUICulture.Name switch
+    {
+        "hu" => "pGoQ6IVLvfw",
+        "en" => "W3oTC2AI0oI",
+        "cs" => "W3oTC2AI0oI",
+        _ => "pGoQ6IVLvfw" // Default to Hungarian
+    };
+}
+
+<!-- Content area: video on left, text on right -->
+@if (ViewData["CurrentCategory"] as string == "healthy" || ViewData["CurrentCategory"] == null)
+{
+    <section class="app-section">
+        <div class="container">
+            <div class="content-section">
+                <div class="landing-content">
+                    <div class="landing-video">
+                        <!-- YouTube embedded video -->
+                        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/@youtubeId" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="landing-text">
+                        <h3>@Localizer["HealthyTitle"]</h3>
+                        <p>@Localizer["HealthyContent"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<!-- Second section: Tiles for Healthy nutrition & Sustainability -->
+<section class="app-section">
+    <div class="container">
+        <div class="tile-section">
+            <div class="tile tile-healthy">
+                <h3>@Localizer["Rect_Healthy_Title"]</h3>
+                <div class="tile-grid">
+                    <a href="@Url.Action("Index", "Home", new { topic = "basic" })" class="tile-item">
+                        <img src="~/images/icon_basic.png" alt="@Localizer["Topic_Basic"]" />
+                        <span>@Localizer["Topic_Basic"]</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Home", new { topic = "food" })" class="tile-item">
+                        <img src="~/images/icon_food.png" alt="@Localizer["Topic_Food"]" />
+                        <span>@Localizer["Topic_Food"]</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Home", new { topic = "health" })" class="tile-item">
+                        <img src="~/images/icon_health.png" alt="@Localizer["Topic_Health"]" />
+                        <span>@Localizer["Topic_Health"]</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Home", new { topic = "diet" })" class="tile-item">
+                        <img src="~/images/icon_diet.png" alt="@Localizer["Topic_Diet"]" />
+                        <span>@Localizer["Topic_Diet"]</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tile tile-sustain">
+                <h3>@Localizer["Rect_Sustain_Title"]</h3>
+                <div class="tile-grid">
+                    <a href="@Url.Action("Index", "Sustainability", new { category = "ecosystem" })" class="tile-item">
+                        <img src="~/images/icon_ecosystem.png" alt="@Localizer["Sust_Ecosystem"]" />
+                        <span>@Localizer["Sust_Ecosystem"]</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Sustainability", new { category = "environment" })" class="tile-item">
+                        <img src="~/images/icon_environment.png" alt="@Localizer["Sust_Environment"]" />
+                        <span>@Localizer["Sust_Environment"]</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Sustainability", new { category = "food-consumption" })" class="tile-item">
+                        <img src="~/images/icon_consumption.png" alt="@Localizer["Sust_Consumption"]" />
+                        <span>@Localizer["Sust_Consumption"]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slideshow section with 5 pictures -->
+<section class="app-section">
+    <div class="container">
+        <div class="content-section slideshow-section">
+            <h2>@Localizer["SlideshowTitle"]</h2>
+            <div class="slideshow-container">
+                <div class="slideshow-wrapper">
+                    <div class="slide fade">
+                        <img src="~/images/slideshow_1.jpg" alt="Slide 1">
+                    </div>
+                    <div class="slide fade">
+                        <img src="~/images/slideshow_2.jpg" alt="Slide 2">
+                    </div>
+                    <div class="slide fade">
+                        <img src="~/images/slideshow_3.jpg" alt="Slide 3">
+                    </div>
+                    <div class="slide fade">
+                        <img src="~/images/slideshow_4.jpg" alt="Slide 4">
+                    </div>
+                    <div class="slide fade">
+                        <img src="~/images/slideshow_5.jpg" alt="Slide 5">
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                </div>
+
+                <!-- Dots for slide indicators -->
+                <div class="slideshow-dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

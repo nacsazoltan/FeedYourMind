@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WatchThese" xml:space="preserve">
+    <value>Podívejte se na tyto!</value>
+  </data>
+  <data name="SolveThese" xml:space="preserve">
+    <value>Vyřešte tyto!</value>
+  </data>
+  <data name="Sust_Environment" xml:space="preserve">
+    <value>Produkce potravin</value>
+  </data>
+  <data name="Sust_Ecosystem" xml:space="preserve">
+    <value>Ekosystém naší planety</value>
+  </data>
+  <data name="Sust_Consumption" xml:space="preserve">
+    <value>Udržitelná spotřeba</value>
+  </data>
+  <data name="NavVideos" xml:space="preserve">
+    <value>Videa</value>
+  </data>
+  <data name="NavExercises" xml:space="preserve">
+    <value>Cvičení</value>
+  </data>
+  <data name="GradeLegendLabel" xml:space="preserve">
+    <value>Barvy ročníků</value>
+  </data>
+  <data name="GradeLegend_Lower" xml:space="preserve">
+    <value>1. stupeň</value>
+  </data>
+  <data name="GradeLegend_Upper" xml:space="preserve">
+    <value>2. stupeň</value>
+  </data>
+</root>

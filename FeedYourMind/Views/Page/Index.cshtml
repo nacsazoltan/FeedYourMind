@@ -1,0 +1,10 @@
+@model OkosDobozWeb.Models.PageItem
+
+<section class="app-section">
+    <div class="container">
+        <article class="content-card">
+            <h1>@Model.Name</h1>
+            @Html.Raw(Model.HtmlText)
+        </article>
+    </div>
+</section>

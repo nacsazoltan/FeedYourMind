@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LandingTitle" xml:space="preserve">
+    <value>Welcome to Feed Your Mind!</value>
+  </data>
+  <data name="Category_Healthy" xml:space="preserve">
+    <value>Healthy Nutrition</value>
+  </data>
+  <data name="Category_Sustainability" xml:space="preserve">
+    <value>Sustainability</value>
+  </data>
+  <data name="HealthyTitle" xml:space="preserve">
+    <value>Nestlé for Healthier Kids</value>
+  </data>
+  <data name="HealthyContent" xml:space="preserve">
+    <value>For Nestlé Hungary, healthy nutrition for children is crucial for ensuring their optimal development. However, theory and practice often differ, as parents and guardians frequently face challenges in encouraging children to consume more vegetables and fruits, and ensuring that the food they consume is nutritious.
+Through the Nestlé for Healthier Kids program, we want to help parents and guardians ensure their children are healthier. The program aims to reach 200 thousand children by 2030 with messages about healthy, balanced nutrition.</value>
+  </data>
+  <data name="SustainabilityTitle" xml:space="preserve">
+    <value>Sustainability</value>
+  </data>
+  <data name="SustainabilityContent" xml:space="preserve">
+    <value>Sustainability is an interesting word. Here is some text about sustainability.</value>
+  </data>
+  <data name="Rect_Healthy_Title" xml:space="preserve">
+    <value>Healthy nutrition</value>
+  </data>
+  <data name="Rect_Sustain_Title" xml:space="preserve">
+    <value>Sustainability</value>
+  </data>
+  <data name="Sust_Ecosystem" xml:space="preserve">
+    <value>Ecosystem</value>
+  </data>
+  <data name="Sust_Environment" xml:space="preserve">
+    <value>Environment</value>
+  </data>
+  <data name="Sust_Consumption" xml:space="preserve">
+    <value>Consumption</value>
+  </data>
+  <data name="NavVideos" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="NavExercises" xml:space="preserve">
+    <value>Exercises</value>
+  </data>
+  <data name="Topic_Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="Topic_Food" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="Topic_Health" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="Topic_Diet" xml:space="preserve">
+    <value>Diet</value>
+  </data>
+  <data name="SlideshowTitle" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+</root>

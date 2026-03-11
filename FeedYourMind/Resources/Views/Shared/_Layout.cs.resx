@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SiteName" xml:space="preserve">
+    <value>Feed Your Mind</value>
+  </data>
+  <data name="Topic_Basic" xml:space="preserve">
+    <value>Základy</value>
+  </data>
+  <data name="Topic_Food" xml:space="preserve">
+    <value>Jídlo</value>
+  </data>
+  <data name="Topic_Health" xml:space="preserve">
+    <value>Zdraví</value>
+  </data>
+  <data name="Topic_Diet" xml:space="preserve">
+    <value>Návyky</value>
+  </data>
+  <data name="WatchThese" xml:space="preserve">
+    <value>Podívejte se na tohle!</value>
+  </data>
+  <data name="SolveThese" xml:space="preserve">
+    <value>Vyřešte tohle!</value>
+  </data>
+  <data name="Menu_Home" xml:space="preserve">
+    <value>Kurz domů</value>
+  </data>
+  <data name="Menu_Healthy" xml:space="preserve">
+    <value>Zdravé stravování</value>
+  </data>
+  <data name="Menu_Sustainability" xml:space="preserve">
+    <value>Udržitelnost</value>
+  </data>
+  <data name="Footer_Impressum" xml:space="preserve">
+    <value>Impressum</value>
+  </data>
+  <data name="Footer_Privacy" xml:space="preserve">
+    <value>Ochrana osobních údajů</value>
+  </data>
+  <data name="Footer_TermsOfUse" xml:space="preserve">
+    <value>Podmínky užití</value>
+  </data>
+  <data name="Footer_About" xml:space="preserve">
+    <value>Impressum</value>
+  </data>
+  <data name="Sust_Ecosystem" xml:space="preserve">
+    <value>Ekosystém naší planety</value>
+  </data>
+  <data name="Sust_Environment" xml:space="preserve">
+    <value>Produkce potravin</value>
+  </data>
+  <data name="Sust_Consumption" xml:space="preserve">
+    <value>Udržitelná spotřeba</value>
+  </data>
+</root>

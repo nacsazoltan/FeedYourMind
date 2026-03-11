@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SiteName" xml:space="preserve">
+    <value>Feed Your Mind</value>
+  </data>
+  <data name="Topic_Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="Topic_Food" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="Topic_Health" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="Topic_Diet" xml:space="preserve">
+    <value>Diet</value>
+  </data>
+  <data name="WatchThese" xml:space="preserve">
+    <value>Watch These!</value>
+  </data>
+  <data name="SolveThese" xml:space="preserve">
+    <value>Solve These!</value>
+  </data>
+  <data name="Menu_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Menu_Healthy" xml:space="preserve">
+    <value>Healthy Nutrition</value>
+  </data>
+  <data name="Menu_Sustainability" xml:space="preserve">
+    <value>Sustainability</value>
+  </data>
+  <data name="Footer_Impressum" xml:space="preserve">
+    <value>Imprint</value>
+  </data>
+  <data name="Footer_Privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="Footer_TermsOfUse" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
+  <data name="Footer_About" xml:space="preserve">
+    <value>Imprint</value>
+  </data>
+  <data name="Sust_Ecosystem" xml:space="preserve">
+    <value>Our Planet's Ecosystem</value>
+  </data>
+  <data name="Sust_Environment" xml:space="preserve">
+    <value>Food Production</value>
+  </data>
+  <data name="Sust_Consumption" xml:space="preserve">
+    <value>Sustainable Consumption</value>
+  </data>
+</root>

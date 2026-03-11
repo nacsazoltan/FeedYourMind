@@ -1,0 +1,45 @@
+@using Microsoft.AspNetCore.Localization
+@using System.Globalization
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var currentCulture = requestCulture?.RequestCulture.UICulture.TwoLetterISOLanguageName ?? "hu";
+    var currentCultureAbbrev = currentCulture switch
+    {
+        "hu" => "HU",
+        "en" => "EN",
+        "cs" => "CZ",
+        _ => currentCulture.ToUpperInvariant()
+    };
+    
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+}
+
+<!-- Language selector form - using plain HTML (tag helpers had issues) -->
+<form action="/Home/SetLanguage" method="POST" class="form-inline lang" data-lang-selector>
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="returnUrl" value="@returnUrl" />
+
+    <button type="button" class="btn btn-ghost lang-trigger" aria-haspopup="listbox" aria-expanded="false">
+        @currentCultureAbbrev
+        <span class="chev" aria-hidden="true">▾</span>
+    </button>
+
+    <ul class="lang-menu" role="listbox" aria-label="Language" hidden>
+        <li>
+            <button type="submit" class="lang-item" name="culture" value="hu" role="option" aria-selected="@(currentCulture == "hu")">
+                Magyar
+            </button>
+        </li>
+        <li>
+            <button type="submit" class="lang-item" name="culture" value="en" role="option" aria-selected="@(currentCulture == "en")">
+                English
+            </button>
+        </li>
+        <li>
+            <button type="submit" class="lang-item" name="culture" value="cs" role="option" aria-selected="@(currentCulture == "cs")">
+                Český
+            </button>
+        </li>
+    </ul>
+</form>

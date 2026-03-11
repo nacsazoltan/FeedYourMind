@@ -1,0 +1,30 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "Impresszum";
+}
+
+<section class="app-section">
+    <div class="container">
+        <section class="content-card impressum-section">
+            <div class="impressum-content">
+                <h1>@Localizer["Impressum_Title"]</h1>
+                
+                <div class="impressum-text">
+                    <p>
+                        @Localizer["Impressum_Label_Publisher"]<br />
+                        Okos Doboz Kft.<br />
+                        1021 Budapest Völgy utca 5/b.<br />
+                        www.okosdobozkft.hu<br />
+                        <br />
+                        @Localizer["Impressum_Label_CEO"]: Szűcs Dóra<br />
+                        @Localizer["Impressum_Label_Strategic"]: Szlankó János<br />
+                        <br />
+                        @Localizer["Impressum_Label_Contact"]: info@okosdoboz.hu
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
