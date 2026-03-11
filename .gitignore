@@ -13,3 +13,6 @@ _build_temp/
 *.suo
 *.userosscache
 *.sln.docstates
+
+# Logs
+*.log
