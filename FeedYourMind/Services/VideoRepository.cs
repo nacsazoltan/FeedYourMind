@@ -50,6 +50,33 @@ public sealed class VideoRepository : IVideoRepository
         return results;
     }
 
+    public async Task<List<VideoItem>> GetVideosByLanguageAsync(string culture, CancellationToken cancellationToken = default)
+    {
+        var normalizedLanguage = NormalizeLanguage(culture);
+        var fullTableName = await _fullTableName.Value;
+
+        var sql = $"SELECT [topic] AS Topic, [videotitle] AS Title, [youtubeid] AS VideoId FROM {fullTableName} WHERE [status] = 1 AND [language] = @language ORDER BY [id]";
+
+        var results = new List<VideoItem>();
+
+        await using var connection = await _connectionFactory.CreateOpenConnectionAsync(cancellationToken);
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.AddWithValue("@language", normalizedLanguage);
+
+        await using var reader = await command.ExecuteReaderAsync(cancellationToken);
+        while (await reader.ReadAsync(cancellationToken))
+        {
+            results.Add(new VideoItem
+            {
+                Topic = reader.GetString(reader.GetOrdinal("Topic")),
+                Title = reader.GetString(reader.GetOrdinal("Title")),
+                VideoId = reader.GetString(reader.GetOrdinal("VideoId")),
+            });
+        }
+
+        return results;
+    }
+
     private static string NormalizeLanguage(string? culture)
     {
         if (string.IsNullOrWhiteSpace(culture))
