@@ -60,6 +60,8 @@ app.UseRequestLocalization();
 app.UseRouting();
 app.UseAuthorization();
 
+app.MapControllers();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Landing}/{action=Index}/{id?}");
