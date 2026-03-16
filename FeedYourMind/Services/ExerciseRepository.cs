@@ -56,6 +56,41 @@ public sealed class ExerciseRepository : IExerciseRepository
         return results;
     }
 
+    public async Task<List<ExerciseItem>> GetExercisesByLanguageAsync(string culture, CancellationToken cancellationToken = default)
+    {
+        var normalizedLanguage = NormalizeLanguage(culture);
+        var fullTableName = await _fullTableName.Value;
+
+        var sql = $"SELECT [topic] AS Topic, [exercisetitle] AS Name, [exerciseid] AS ExerciseId, [grade] AS Grade FROM {fullTableName} WHERE [status] = 1 AND [language] = @language ORDER BY [id]";
+
+        var results = new List<ExerciseItem>();
+
+        await using var connection = await _connectionFactory.CreateOpenConnectionAsync(cancellationToken);
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.Add(new SqlParameter("@language", SqlDbType.Char, 2) { Value = normalizedLanguage });
+
+        await using var reader = await command.ExecuteReaderAsync(cancellationToken);
+        while (await reader.ReadAsync(cancellationToken))
+        {
+            int? grade = null;
+            var gradeOrdinal = reader.GetOrdinal("Grade");
+            if (!reader.IsDBNull(gradeOrdinal))
+            {
+                grade = Convert.ToInt32(reader.GetValue(gradeOrdinal));
+            }
+
+            results.Add(new ExerciseItem
+            {
+                Topic = reader.GetString(reader.GetOrdinal("Topic")),
+                Name = reader.GetString(reader.GetOrdinal("Name")),
+                ExerciseId = reader.GetString(reader.GetOrdinal("ExerciseId")),
+                Grade = grade
+            });
+        }
+
+        return results;
+    }
+
     private static string NormalizeLanguage(string? culture)
     {
         if (string.IsNullOrWhiteSpace(culture))

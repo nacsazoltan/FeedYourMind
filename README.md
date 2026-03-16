@@ -38,6 +38,50 @@ dotnet run
 
 ## Database tables used
 
+## API endpoints
+
+### GET /api/getexercises
+
+Returns exercise metadata for a selected language. Intended for mobile clients (for example React Native).
+
+Query parameters:
+
+- `language` (required): 2-letter language code. Supported values in practice: `hu`, `en`, `cs` (mapped to `cz` in database queries).
+
+Success response (`200 OK`): array of objects with fields:
+
+- `exercisetitle`
+- `exerciseid`
+- `topic`
+- `grade`
+
+Error response (`400 Bad Request`):
+
+```json
+{
+	"error": "language is required"
+}
+```
+
+Example request:
+
+```http
+GET /api/getexercises?language=en
+```
+
+Example success response:
+
+```json
+[
+	{
+		"exercisetitle": "Recycling quiz",
+		"exerciseid": "12345",
+		"topic": "environment",
+		"grade": 4
+	}
+]
+```
+
 ### videolist
 
 Expected columns:
